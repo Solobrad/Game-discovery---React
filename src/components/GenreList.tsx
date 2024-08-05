@@ -12,9 +12,10 @@ import useGenres, { Genre } from "../hooks/useGenres";
 interface Props {
   // Notify parent that a genre has been selected
   onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({ onSelectGenre }: Props) => {
+const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   // Components shouldn't know anything about https request
   const { data, isLoading, error } = useGenres();
 
@@ -32,6 +33,7 @@ const GenreList = ({ onSelectGenre }: Props) => {
               src={genre.image_background}
             />
             <Button
+              fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
               onClick={() => onSelectGenre(genre)}
               fontSize="lg"
               variant="link"
