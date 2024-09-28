@@ -7,6 +7,9 @@ const Footer = () => {
       <Link href="https://rawg.io/" isExternal>
         Data provided by RAWG
       </Link>
+      <Link href="https://my-portfolio-react18-qm3e.vercel.app/" isExternal>
+        Check Out My Portfolio!
+      </Link>
     </Box>
   );
 };
